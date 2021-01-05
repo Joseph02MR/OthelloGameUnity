@@ -41,7 +41,7 @@ public class kekMain : MonoBehaviour
     private void Update()
     {
         Juego.GetScore();
-        if (flag)
+        if (flag || (Juego.Jugador1.pass && Juego.Jugador2.pass))
         {
             if (Waypoint.aux != null)
             {
