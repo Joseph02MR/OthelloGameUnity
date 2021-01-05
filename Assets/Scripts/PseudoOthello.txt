@@ -1,0 +1,149 @@
+find_Lines( tablero, i, j, player)
+    List<List> Lineas= new List
+    
+    Tupla[] Coordenadas = { =new Tupla(0,1),(1,1), (1,0), (1,-1), (0,-1), (-1,-1),(-1,0), (-1,1)}
+    foreach( int x, int y in Coordenanadas)
+        u = i;
+        v = j
+        
+        List<Tupla> Linea 
+        u += x
+        v += y
+        bool found = False
+        
+        while(u >= 0 && u < 8 && v > = 0 && v < 8)
+            if board[v,u] == 0
+                break
+            else if board[v,u] == player
+                found = True;
+                break
+            else
+                Linea.add(Tupla(u,v))
+            u += x
+            v += y
+        if found && !Linea.isEmpty()
+            Lineas.add(Linea)
+    return Lineas
+        
+
+get_pos_Moves(board, player)
+    List<Tupla> Resultado
+    List<List> Lineas= new List
+    
+    for(i = 0 ; i < 8; i++)
+        for(j = 0; j < 8 ; j++)
+            if(board[j,i] == 0
+                Lineas = find_Lines(board, i,j, player)
+                if(!Lineas.isEmpty())
+                    Resultado.add(Tupla(i,j))
+    return Resultado
+                
+int [,] ponerFicha (int [,] Tablero, int r, int c, int player) 
+    int [,] neuTablero = new int[x,y]
+    for( int i = 0; i < x; i++)
+        for(int j = 0; j < y; j++)
+            neuTablero[i,j] = Tablero[i,j]
+    
+    list<list<tupla>> Lineas = EncontrarLineas (Tablero, r,c, player)
+    neuTablero[r,c] = player
+    foreach (Linea in Lineas)
+        foreach (tupla in Linea)
+            neuTablero[tupla.x,tupla.y] = player
+return neuTablero
+        
+onMouseDown()
+{
+      dar la referencia de la casilla  
+      pasar la ref al Tablero
+      if( tablero[] == 0)
+            ColocarFicha(tablero, x,y, color)
+                if(casillaValida)
+                    CrearFicha(ref, tablero[ref]) //casilla unity y casilla en Tablero Othello
+                else
+                    print (Casillainvalida)
+      else print(casilla invalida)
+      
+}      
+
+colocarFicha()
+    Availability ---> Iluminar casillas disponibles
+    clickear en una casilla (disponible)
+    mandar la referencia del objeto a Tablero ----> TuplaUnity
+    if casilla no está en Avaibasdfgasdgfas
+        print "te chingaste"        
+    else
+       todo code logic here // Code ColocarFicha
+       
+ReevaluarTableroUnity()
+    //despues de colocar ficha
+    foreach var x in Arreglo TuplaUnity
+        
+        Tablero[tupla.a][tupla.b]:
+        TuplaUnity
+
+void CrearFicha (GameObject a, int b)
+if casilla !isEmpty
+    eliminar GameObject
+    if b == 1
+        Instantiate TokenBlack, parametros
+    if b == 2
+         Instantiate TokenWhite, parametros   
+         
+void GameManager()
+     if turno == (int)Juego.J2.color
+        GetType(Juego.J2)
+        if( == PlayerIA)
+            RealizarMovRandom(Juego.J2.color)
+            ActualizarTablero()
+            
+J1 J2
+
+J1 == negras  ---- juego empieza J1
+else ----juego empieza J2
+
+
+         
+//////////////////////////////////////////////////////////////////////////////////////////
+IA
+algoritmo minimax
+   
+Random
+
+void RealizarMovRandom (byte Player)
+    Lista = availability
+    generar num random (0<x<Lista.Length)
+    newTablero = colocarFicha(Lista[numRandom].a, Lista[numRandom.b], J2.color)
+    
+             
+static int Minimax(int [,] Tablero, byte color , int depth, bool MaxPlayer)
+    int [,] neuBoard
+    int value, valueAux
+    Lista = availability(player)
+    if depth == 0 || Lista.Count == 0
+        return getHeuristicScore(Tablero, color)
+    
+    byte nextColor = color == 1 ? 2 : 1;
+    if(MaxPlayer)
+        value = -infinity
+        foreach(x in Lista)
+            neuBoard = ColocarFicha(Tablero, x.a, x.b, player)
+            valueAux = Minimax(neuTablero, nextColor, depth-1, false)
+            if valueAux > value
+                value = valueAux
+        return value 
+    else 
+        value = infinity
+        foreach(x in Lista)
+             neuBoard = ColocarFicha(Tablero, x.a, x.b, player)
+             valueAux = Minimax(neuTablero, nextColor, depth-1, true)
+             if valueAux > value
+                 value = valueAux
+         return value     
+                
+        
+    
+       
+        
+        
+   
+                        
