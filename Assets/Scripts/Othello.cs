@@ -52,10 +52,15 @@ namespace EmptyProject1
 
         public bool EvaluarFinal()
         {
-            int aux = 0;
-            foreach(var x in Tablero)
-                if(x == 0) aux ++; 
-            return Availabilty(Tablero, Jugador1.color).Count == 0 && Availabilty(Tablero, Jugador2.color).Count == 0 || aux == 0;
+            if(Jugador1.pass && Jugador2.pass)
+                return true;
+            else
+            {
+                int aux = 0;
+                foreach(var x in Tablero)
+                    if(x == 0) aux ++; 
+                return (Availabilty(Tablero, Jugador1.color).Count == 0 && Availabilty(Tablero, Jugador2.color).Count == 0) || aux == 0;
+            }
         }
 
 

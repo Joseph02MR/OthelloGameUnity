@@ -41,7 +41,7 @@ public class kekMain : MonoBehaviour
     private void Update()
     {
         Juego.GetScore();
-        if (flag)
+        if (flag || (Juego.Jugador1.pass && Juego.Jugador2.pass))
         {
             if (Waypoint.aux != null)
             {
@@ -63,7 +63,6 @@ public class kekMain : MonoBehaviour
                 {
                     Thread.Sleep(250);
                     turno = PlayerIA.RealizarMovRandom(Juego.Jugador2, kekMain.Juego, turno);
-
                 }
                 else
                     turno = PlayerIA.RealizarMovMinimax(Juego, turno, Juego.Tablero, 4, true);
