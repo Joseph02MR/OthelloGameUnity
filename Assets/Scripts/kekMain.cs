@@ -63,7 +63,6 @@ public class kekMain : MonoBehaviour
                 {
                     Thread.Sleep(250);
                     turno = PlayerIA.RealizarMovRandom(Juego.Jugador2, kekMain.Juego, turno);
-
                 }
                 else
                     turno = PlayerIA.RealizarMovMinimax(Juego, turno, Juego.Tablero, 4, true);
