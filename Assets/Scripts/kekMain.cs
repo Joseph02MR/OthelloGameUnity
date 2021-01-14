@@ -1,5 +1,4 @@
 ﻿using EmptyProject1;
-using UnityEditor;
 using UnityEngine;
 using System.Threading;
 
@@ -11,27 +10,16 @@ public class kekMain : MonoBehaviour
     public static bool turno;
     public static bool final;
     public static bool flag;
-    private static bool dificulty;
-    
     // Start is called before the first frame update
     void Start()
     {
         final = false;
         Juego = new Othello();
-        bool prueba = EditorUtility.DisplayDialog("Crear Juego",
-            "Elegir modo de juego", "PvP", "PvIA"); 
-        bool colorJugador = EditorUtility.DisplayDialog("Nuevo Juego",
-            "Elegir color fichas", "Negras", "Blancas");
-
-        if(!prueba)
-        {
-            dificulty = EditorUtility.DisplayDialog("Modo IA", "Seleccione la dificultad",
-                    "Fácil", "Normal");
-        }
         
-        Juego.CrearJuego(prueba);
-        Juego.NuevoJuego(colorJugador);
-        if (colorJugador) turno = true;
+        Juego.CrearJuego(MenuBehaviour.Modo);
+        Juego.NuevoJuego(MenuBehaviour.ColorJugador);
+
+        if (MenuBehaviour.ColorJugador) turno = true;
         else turno = false;
             
         EnlazarTablero();
@@ -59,7 +47,7 @@ public class kekMain : MonoBehaviour
         {
             if (!turno)
             {
-                if(dificulty)
+                if(MenuBehaviour.Dificultad)
                 {
                     Thread.Sleep(250);
                     turno = PlayerIA.RealizarMovRandom(Juego.Jugador2, kekMain.Juego, turno);
