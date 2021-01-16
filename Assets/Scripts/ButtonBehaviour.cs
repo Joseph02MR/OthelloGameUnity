@@ -18,5 +18,10 @@ namespace EmptyProject1
             
             kekMain.turno = kekMain.turno ? false : true;
         }
+
+        public void QuitButton()
+        {
+            SceneManager.LoadScene("Principal");
+        }
     }
 }
