@@ -13,7 +13,7 @@ Salir : (Quit) Closes the game.
 
 In the game screen the player has 3 buttons.
 
-Pasar: The player that has no movements available has to pass to keep the game running
+Pasar: (Pass) The player that has no movements available has to pass to keep the game running
 	If both players in a PVP game pass, the game is over.
 
 Reiniciar: (Reset) Starts a new game with the pre established configuration.
