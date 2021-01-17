@@ -4,9 +4,11 @@ This repo contains the Othello game  I designed with Iván León for the Data St
 
 The main menu has 3 buttons:
 
-Jugar: Opens configuration for a game versus player or AI and the color for the player one
-Dificultad: Sets the funcionallity of the AI. "Fácil" (easy) configures the AI to select random movements. "Normal" AI selects movements using Minimax algorithm
-Salir : Closes the game.
+Jugar: (Play) Opens configuration for a game versus player or AI and the color for the player one.
+
+Dificultad: (Difficulty) Sets the funcionallity of the AI. "Fácil" (easy) configures the AI to select random movements. "Normal" AI selects movements using Minimax algorithm.
+
+Salir : (Quit) Closes the game.
 
 
 In the game screen the player has 3 buttons.
